@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "182073488131",
+    "firebase_url": "https://digi-kirana.firebaseio.com",
+    "project_id": "digi-kirana",
+    "storage_bucket": "digi-kirana.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:182073488131:android:5347808f42b17f84bbef36",
+        "android_client_info": {
+          "package_name": "com.example.digikirana"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "182073488131-f2j23qfduth0fh30for9bngdir2fdjtl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.digikirana",
+            "certificate_hash": "7d4d99d026c7a1d3f80689a0c2b748d5199c83c0"
+          }
+        },
+        {
+          "client_id": "182073488131-8c5aiv013p9o7jnq4akioh75lla8g2r2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDqRc8q3cbddNqGZTqnqvkCMqKqjS-EA3E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "182073488131-8c5aiv013p9o7jnq4akioh75lla8g2r2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
