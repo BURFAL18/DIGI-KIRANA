@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -21,6 +23,12 @@ public class HomeFragment extends Fragment {
         // Required empty public constructor
     }
 
+    ///horizontal product layout
+    private TextView hlayouttitle;
+    private Button hviewallbtn;
+    private RecyclerView hrecyclerview;
+
+    ///horizontal product layout
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
@@ -31,7 +39,7 @@ public class HomeFragment extends Fragment {
         layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
         mcategoryRecyclerView.setLayoutManager((layoutManager));
 
-        List<categorymodel> categorymodelList = new ArrayList<categorymodel>(); // list
+        List<categorymodel> categorymodelList = new ArrayList<>(); // list
         categorymodelList.add(new categorymodel("link", "Home"));
         categorymodelList.add(new categorymodel("link", "Food"));
         categorymodelList.add(new categorymodel("link", "Stationery"));
@@ -41,7 +49,29 @@ public class HomeFragment extends Fragment {
         mcategoryadapter = new categoryadapter(categorymodelList);
         mcategoryRecyclerView.setAdapter(mcategoryadapter); // set with recycler view
         mcategoryadapter.notifyDataSetChanged();
+///horizontal product layout assign
+        hlayouttitle = view.findViewById(R.id.hprotitle);
+        hviewallbtn = view.findViewById(R.id.hviewallbtn);
+        hrecyclerview = view.findViewById(R.id.hrecycler);
+        //list
+        List<Horizontalproductmodel> horizontalproductmodelList = new ArrayList<>();
+        horizontalproductmodelList.add(new Horizontalproductmodel(R.mipmap.atta, "Ashirwad", "Atta", "Rs 365"));
+        horizontalproductmodelList.add(new Horizontalproductmodel(R.mipmap.almonds, "ALmonds", "Dry fruit", "Rs 955"));
+        horizontalproductmodelList.add(new Horizontalproductmodel(R.mipmap.mask, "N95", "MASK", "Rs 450"));
+        horizontalproductmodelList.add(new Horizontalproductmodel(R.mipmap.maggie, "MAGGIE", "NOODLES", "Rs 54"));
+        horizontalproductmodelList.add(new Horizontalproductmodel(R.mipmap.detol, "DETTOL", "SANITIZER", "Rs 140"));
+        horizontalproductmodelList.add(new Horizontalproductmodel(R.mipmap.potato, "POTATO", "Vegetable", "Rs 45"));
+        horizontalproductmodelList.add(new Horizontalproductmodel(R.mipmap.oil, "FORTUNE", "OIL", "Rs 650"));
+        horizontalproductmodelList.add(new Horizontalproductmodel(R.mipmap.jam, "KISSAN", "KETCHUP", "Rs 215"));
 
+
+        //h scroll adapter
+        Horizontalproductadpater horizontalproductadpater = new Horizontalproductadpater(horizontalproductmodelList);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+        linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+        hrecyclerview.setAdapter(horizontalproductadpater);
+        horizontalproductadpater.notifyDataSetChanged();
+// / horizontal product layout
         return view;
     }
 }
