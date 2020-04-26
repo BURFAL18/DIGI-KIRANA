@@ -50,10 +50,11 @@ public class HomeFragment extends Fragment {
         mcategoryRecyclerView.setAdapter(mcategoryadapter); // set with recycler view
         mcategoryadapter.notifyDataSetChanged();
 ///horizontal product layout assign
-        hlayouttitle = view.findViewById(R.id.hprotitle);
-        hviewallbtn = view.findViewById(R.id.hviewallbtn);
-        hrecyclerview = view.findViewById(R.id.hrecycler);
+        hlayouttitle = view.findViewById(R.id.hsprotitle);
+        hviewallbtn = view.findViewById(R.id.hslviewallbtn);
+        hrecyclerview = view.findViewById(R.id.hslrecyclerview);
         //list
+
         List<Horizontalproductmodel> horizontalproductmodelList = new ArrayList<>();
         horizontalproductmodelList.add(new Horizontalproductmodel(R.mipmap.atta, "Ashirwad", "Atta", "Rs 365"));
         horizontalproductmodelList.add(new Horizontalproductmodel(R.mipmap.almonds, "ALmonds", "Dry fruit", "Rs 955"));
@@ -69,9 +70,28 @@ public class HomeFragment extends Fragment {
         Horizontalproductadpater horizontalproductadpater = new Horizontalproductadpater(horizontalproductmodelList);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+        hrecyclerview.setLayoutManager(linearLayoutManager);
+
         hrecyclerview.setAdapter(horizontalproductadpater);
         horizontalproductadpater.notifyDataSetChanged();
 // / horizontal product layout
+///tetsing multiple layout
+/////////////testing////////////
+        RecyclerView testing = view.findViewById(R.id.testing);
+        LinearLayoutManager testingLayoutManager = new LinearLayoutManager(getContext());
+        testingLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        testing.setLayoutManager(testingLayoutManager);
+
+        List<Homepagemodel> homepagemodelList = new ArrayList<>();
+        homepagemodelList.add(new Homepagemodel(0, "PRODUCTS AVAILABLE", horizontalproductmodelList));
+        homepagemodelList.add(new Homepagemodel(1, " ON DISCOUNT ", horizontalproductmodelList));
+        homepagemodelList.add(new Homepagemodel(0, "PRODUCTS AVAILABLE", horizontalproductmodelList));
+
+        // LinearLayoutManager testingLayoutManger; //3.23 youyube 19part
+
+        Homepageadapter adapter = new Homepageadapter(homepagemodelList);
+        testing.setAdapter(adapter);
+        adapter.notifyDataSetChanged();
         return view;
     }
 }

@@ -29,6 +29,7 @@ public class Horizontalproductadpater extends RecyclerView.Adapter<Horizontalpro
     public void onBindViewHolder(@NonNull Horizontalproductadpater.ViewHolder viewHolder, int position) {
 //data bind
 // extract data from list by getters
+
         int resource = horizontalproductmodelList.get(position).getProductimage();
         String title = horizontalproductmodelList.get(position).getProducttitle();
         String description = horizontalproductmodelList.get(position).getProductdescription();
@@ -42,10 +43,14 @@ public class Horizontalproductadpater extends RecyclerView.Adapter<Horizontalpro
 
     @Override
     public int getItemCount() {
-        //return size of list
-        return horizontalproductmodelList.size();
+        // if items are more than 6 we enable view all btn by displaying only 6 items
+        if (horizontalproductmodelList.size() > 6) {
+            return 6;
+        } else {
+            //return size of list
+            return horizontalproductmodelList.size();
+        }
     }
-
     public class ViewHolder extends RecyclerView.ViewHolder {
         // all variables
         private ImageView productimage;
@@ -56,10 +61,10 @@ public class Horizontalproductadpater extends RecyclerView.Adapter<Horizontalpro
         public ViewHolder(@NonNull View itemView) {
             // assign variables
             super(itemView);
-            productimage = itemView.findViewById(R.id.hproimage);
-            producttitle = itemView.findViewById(R.id.hprotitle);
-            productdescription = itemView.findViewById(R.id.hprocategory);
-            productprice = itemView.findViewById(R.id.hproprice);
+            productimage = itemView.findViewById(R.id.hsproimage);
+            producttitle = itemView.findViewById(R.id.hsprotitle);
+            productdescription = itemView.findViewById(R.id.hsprodescription);
+            productprice = itemView.findViewById(R.id.hsproprice);
         }
 
         // methods
