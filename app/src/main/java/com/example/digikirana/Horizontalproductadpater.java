@@ -1,5 +1,6 @@
 package com.example.digikirana;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -58,13 +59,20 @@ public class Horizontalproductadpater extends RecyclerView.Adapter<Horizontalpro
         private TextView productdescription;
         private TextView productprice;
 
-        public ViewHolder(@NonNull View itemView) {
+        public ViewHolder(@NonNull final View itemView) {
             // assign variables
             super(itemView);
             productimage = itemView.findViewById(R.id.hsproimage);
             producttitle = itemView.findViewById(R.id.hsprotitle);
             productdescription = itemView.findViewById(R.id.hsprodescription);
             productprice = itemView.findViewById(R.id.hsproprice);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent productDetailsIntent = new Intent(itemView.getContext(), ProductdetailsActivity.class);
+                    itemView.getContext().startActivity(productDetailsIntent);
+                }
+            });
         }
 
         // methods

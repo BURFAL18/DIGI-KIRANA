@@ -2,10 +2,11 @@
 <resources>
     <color name="colorPrimary">#000000</color>
     <color name="colorPrimaryDark">#3700B3</color>
-    <color name="colorAccent">#03DAC5</color>
+    <color name="colorAccent">#EAE6CF</color>
     <color name="grey">#70FFFFFF</color>
+    <color name="yellow">#FFFFEE00</color>
     <color name="white">#FFFFFF</color>
-    <color name="purple">#93385FFF</color>
+    <color name="purple">#FFEE00</color>
     <color name="lightpurple">#9F6B99FF</color>
     <color name="PEACH">#F67E7D</color>
     <color name="LIGHTPEACH">#FFB997</color>

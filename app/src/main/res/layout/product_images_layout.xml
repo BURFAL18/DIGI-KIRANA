@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:elevation="3dp">
+
+    <ImageView
+        android:id="@+id/availability_indiactor_imageview"
+        android:layout_width="91dp"
+        android:layout_height="77dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/product_price"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewpager_indicator"
+        app:srcCompat="@drawable/instock" />
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/product_image_viewpager"
+        android:layout_width="0dp"
+        android:layout_height="360dp"
+        android:layout_marginTop="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/viewpager_indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/product_image_viewpager"
+        app:tabBackground="@drawable/dotselector"
+        app:tabIndicatorHeight="0dp" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="55dp"
+        android:layout_height="77dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:clickable="true"
+        android:tint="#FF706E60"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:rippleColor="@color/white"
+        app:srcCompat="@drawable/star" />
+
+    <TextView
+        android:id="@+id/product_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="Product Title"
+        android:textColor="@color/colorPrimary"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/product_image_viewpager" />
+
+    <TextView
+        android:id="@+id/product_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="Rs 350/-"
+        android:textColor="@color/VIOLET"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/product_title" />
+
+    <TextView
+        android:id="@+id/tv_availabilty_indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="AVAILABLE IN SHOP "
+        android:textColor="#1ACA21"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/availability_indiactor_imageview"
+        app:layout_constraintStart_toStartOf="@+id/availability_indiactor_imageview"
+        app:layout_constraintTop_toBottomOf="@+id/availability_indiactor_imageview" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
