@@ -19,8 +19,10 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.navigation.NavigationView;
 
-public class MainActivity extends AppCompatActivity {
-    public FrameLayout frameLayout;
+
+public class MainActivity extends AppCompatActivity
+        implements NavigationView.OnNavigationItemSelectedListener {
+    private FrameLayout frameLayout;
     private AppBarConfiguration mAppBarConfiguration;
 
     @Override
@@ -31,18 +33,24 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         getSupportActionBar().setDisplayShowTitleEnabled(false); // remove default title for custom logo show
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+
+        //  navigationView.getMenu().getItem(0).setChecked(true);
+
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
-        mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow)
+     /*   mAppBarConfiguration = new AppBarConfiguration.Builder
+                (R.id.nav_digikirana, R.id.nav_orders, R.id.nav_cart,R.id.nav_signout)
                 .setDrawerLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
-        navigationView.getMenu().getItem(0).setChecked(true);
+*/
+
         frameLayout = findViewById(R.id.main_framelayout);
         setFragment(new HomeFragment());
     }
@@ -83,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
-
+    @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         //view of items clicked
         int id = item.getItemId();
@@ -112,5 +120,4 @@ public class MainActivity extends AppCompatActivity {
     }
 
 }
-
 

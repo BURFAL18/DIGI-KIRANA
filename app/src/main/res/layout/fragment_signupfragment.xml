@@ -15,25 +15,16 @@
         android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/crosssignup"
-            android:layout_width="87dp"
-            android:layout_height="53dp"
-            android:background="@android:color/transparent"
-            android:padding="16dp"
-            android:src="@mipmap/cross"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
             android:id="@+id/imageView"
             android:layout_width="212dp"
             android:layout_height="155dp"
             android:layout_marginStart="79dp"
             android:layout_marginEnd="79dp"
-            android:layout_marginBottom="47dp"
+            android:layout_marginBottom="28dp"
             android:src="@mipmap/dgilogo"
             app:layout_constraintBottom_toTopOf="@+id/namesignup"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.512"
             app:layout_constraintStart_toStartOf="parent" />
 
         <EditText
@@ -130,6 +121,14 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/crossbtnsingup"
+            android:layout_width="28dp"
+            android:layout_height="27dp"
+            android:src="@mipmap/cross"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

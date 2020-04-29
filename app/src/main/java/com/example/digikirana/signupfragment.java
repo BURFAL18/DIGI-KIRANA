@@ -2,21 +2,19 @@ package com.example.digikirana;
 
 import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
-import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -27,7 +25,6 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
 
 
 /**
@@ -47,7 +44,7 @@ public class signupfragment extends Fragment {
     private EditText password;
     private EditText confirmpassword;
     private String emailpattern = "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
-    private ImageButton crossbtn;
+    //  private ImageButton crossbtn;
     private Button signupbtn;
 
     private FirebaseAuth firebaseAuth;
@@ -89,6 +86,7 @@ public class signupfragment extends Fragment {
                 checkEmailAndPassword();
             }
         });
+
     }
 
     private void setFragment(Fragment fragment) {
@@ -115,9 +113,7 @@ public class signupfragment extends Fragment {
                                                 @Override
                                                 public void onComplete(@NonNull Task<DocumentReference> task) {
                                                     if (task.isSuccessful()) {
-                                                        Intent mainintent = new Intent(getActivity(), MainActivity.class);
-                                                        startActivity(mainintent);
-                                                        getActivity().finish();
+                                                        mainIntent();
                                                     } else {
                                                         String error = task.getException().getMessage();
                                                         Toast.makeText(getActivity(), error, Toast.LENGTH_SHORT).show();
@@ -139,4 +135,9 @@ public class signupfragment extends Fragment {
         }
     } // end of emailand pswd check
 
+    private void mainIntent() {
+        Intent mainintent = new Intent(getActivity(), MainActivity.class);
+        startActivity(mainintent);
+        getActivity().finish();
+    }
 }

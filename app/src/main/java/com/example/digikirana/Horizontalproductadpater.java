@@ -43,9 +43,9 @@ public class Horizontalproductadpater extends RecyclerView.Adapter<Horizontalpro
 
     @Override
     public int getItemCount() {
-        // if items are more than 6 we enable view all btn by displaying only 6 items
-        if (horizontalproductmodelList.size() > 6) {
-            return 6;
+        // if items are more than 8 we enable view all btn by displaying only 6 items
+        if (horizontalproductmodelList.size() > 8) {
+            return 8;
         } else {
             //return size of list
             return horizontalproductmodelList.size();
