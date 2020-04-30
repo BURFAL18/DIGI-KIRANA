@@ -22,8 +22,15 @@ import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    private static final int HOME_FRAGMENT = 0;
+    private static final int WISHLIST_FRAGMENT = 1;
+
+
     private FrameLayout frameLayout;
     private AppBarConfiguration mAppBarConfiguration;
+    private static int currentFragment = -1;
+    private NavigationView navigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +45,7 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        //  navigationView.getMenu().getItem(0).setChecked(true);
+        navigationView.getMenu().getItem(0).setChecked(true);
 
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
@@ -52,19 +59,33 @@ public class MainActivity extends AppCompatActivity
 */
 
         frameLayout = findViewById(R.id.main_framelayout);
-        setFragment(new HomeFragment());
+        setFragment(new HomeFragment(), HOME_FRAGMENT);
     }
 
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START);
+        } else {
+            if (currentFragment == HOME_FRAGMENT) {
+                super.onBackPressed();
+            } else {
+                invalidateOptionsMenu();
+                setFragment(new HomeFragment(), HOME_FRAGMENT);
+                navigationView.getMenu().getItem(0).setChecked(true);
+            }
+        }
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
+        if (currentFragment == HOME_FRAGMENT) {
+            getSupportActionBar().setDisplayShowTitleEnabled(false);
+            getMenuInflater().inflate(R.menu.main, menu);
+        }
         return true;
     }
 
@@ -97,9 +118,14 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_digikirana) {
+            invalidateOptionsMenu();
+            setFragment(new HomeFragment(), HOME_FRAGMENT);
             Toast.makeText(this, "home", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.nav_orders) {
-            Toast.makeText(this, "orders", Toast.LENGTH_SHORT).show();
+            gotoFragment("My WISHLIST", new Mywishlist(), WISHLIST_FRAGMENT);
+
+            // todo:rename order as wishlist
+            Toast.makeText(this, "Wishlist", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.nav_cart) {
             Toast.makeText(this, "cart", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.nav_signout) {
@@ -112,8 +138,19 @@ public class MainActivity extends AppCompatActivity
 
     }
 
+    private void gotoFragment(String title, Fragment fragment, int fragmentno) {
+        getSupportActionBar().setDisplayShowTitleEnabled(true);
+        getSupportActionBar().setTitle(title);
+        invalidateOptionsMenu();
+        setFragment(fragment, fragmentno);
+        //  if(fragmentno==WISHLIST_FRAGMENT)
+        //  { navigationView.getMenu().getItem(1).setChecked(true); // position in side nav bar as true }
+    }
+
+
     //   setting fragment for home
-    private void setFragment(Fragment fragment) {
+    //todo:correct int no
+    private void setFragment(Fragment fragment, int no) {
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(frameLayout.getId(), fragment);
         fragmentTransaction.commit();
