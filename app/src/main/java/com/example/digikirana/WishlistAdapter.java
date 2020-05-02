@@ -67,6 +67,7 @@ public class WishlistAdapter extends RecyclerView.Adapter<WishlistAdapter.ViewHo
             xdeletebtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+
                     Toast.makeText(itemView.getContext(), "delete", Toast.LENGTH_SHORT).show(); // temp pop up delete
                 }
             });

@@ -50,11 +50,12 @@
 
         <TextView
             android:id="@+id/donthaveaccount_signin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="92dp"
+            android:layout_width="190dp"
+            android:layout_height="23dp"
+            android:layout_marginStart="97dp"
             android:layout_marginEnd="124dp"
-            android:layout_marginBottom="31dp"
+            android:layout_marginBottom="64dp"
+            android:background="@color/grey"
             android:text="Create New Account / SIGN UP"
             android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -75,13 +76,18 @@
 
         <Button
             android:id="@+id/btnsignin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="112dp"
+            android:layout_height="55dp"
             android:layout_marginStart="162dp"
             android:layout_marginTop="35dp"
             android:layout_marginEnd="161dp"
             android:layout_marginBottom="40dp"
             android:text="Sign IN"
+
+            android:background="#03A9F4"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/donthaveaccount_signin"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

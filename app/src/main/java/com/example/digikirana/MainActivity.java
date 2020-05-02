@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity
 
     private static final int HOME_FRAGMENT = 0;
     private static final int WISHLIST_FRAGMENT = 1;
-
+    private static final int BILLING_FRAGMENT = 2;
 
     private FrameLayout frameLayout;
     private AppBarConfiguration mAppBarConfiguration;
@@ -119,15 +119,18 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.nav_digikirana) {
             invalidateOptionsMenu();
+            getSupportActionBar().setDisplayShowTitleEnabled(false);
+
             setFragment(new HomeFragment(), HOME_FRAGMENT);
             Toast.makeText(this, "home", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.nav_orders) {
             gotoFragment("My WISHLIST", new Mywishlist(), WISHLIST_FRAGMENT);
-
             // todo:rename order as wishlist
             Toast.makeText(this, "Wishlist", Toast.LENGTH_SHORT).show();
-        } else if (id == R.id.nav_cart) {
-            Toast.makeText(this, "cart", Toast.LENGTH_SHORT).show();
+        } else if (id == R.id.nav_billing) {
+            //todo: add the billing java file
+            setContentView(R.layout.activity_billing);
+            Toast.makeText(this, "BILLING", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.nav_signout) {
             Toast.makeText(this, "signout", Toast.LENGTH_SHORT).show();
         }

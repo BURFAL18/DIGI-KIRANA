@@ -99,6 +99,8 @@ public class HomeFragment extends Fragment {
         horizontalproductadpater.notifyDataSetChanged();
   */      ////////horizontal product layout.//////////
         /////////////////testing//////////////////////////
+
+
         RecyclerView testing = view.findViewById(R.id.testing);
         LinearLayoutManager testingLayoutManager = new LinearLayoutManager(getContext());
         testingLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);

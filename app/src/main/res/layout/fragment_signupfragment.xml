@@ -97,16 +97,19 @@
 
         <Button
             android:id="@+id/btnsignup"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="117dp"
+            android:layout_height="45dp"
             android:layout_marginStart="142dp"
             android:layout_marginEnd="181dp"
-            android:layout_marginBottom="32dp"
-            android:background="@color/white"
+            android:layout_marginBottom="28dp"
+            android:background="#03A9F4"
             android:text="SIGN UP"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/alreadyhaveaccount_signup"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.137"
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
@@ -116,6 +119,7 @@
             android:layout_marginStart="92dp"
             android:layout_marginEnd="91dp"
             android:layout_marginBottom="50dp"
+            android:background="@color/grey"
             android:text="ALREADY HAVE ACCOUNT / SIGN IN"
             android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"

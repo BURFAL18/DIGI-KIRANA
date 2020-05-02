@@ -10,12 +10,13 @@
             android:id="@+id/nav_digikirana"/>
         <item
             android:id="@+id/nav_orders"
-            android:icon="@mipmap/orderw"
-            android:title="Orders" />
+            android:icon="@drawable/star"
+            android:title="WISHLIST" />
         <item
-            android:id="@+id/nav_cart"
+            android:id="@+id/nav_billing"
             android:icon="@mipmap/cartw"
-            android:title="CART" />
+            android:title="BILLING" />
+
         <item
             android:id="@+id/nav_signout"
             android:icon="@mipmap/signout"
