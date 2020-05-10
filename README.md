@@ -24,5 +24,5 @@ INSTALL THE APP IN YOUR ANDROID PHONE(5.0+)
 5.FOR BILLING SWIPE LEFT FROM HOME SCREEN A NAVIGATION BAR WILL COME THEN CLICK ON BILLING
 ADD ITEM , PRICE , QAUNTITY AND GET THE TOTAL BILL AND AFTER ENTERING THE AMOUNT PAID VALUE YOU CAN FIND THE BALANACE TO BE PAID BACK TO THE CUSTOMER.
 ****************************************************************************************************************************************
-FOR SNAPSHOT OF APP REFER SCREENSHOTS.docx  DOCUMENT.
+FOR SNAPSHOT OF APP REFER SCREENSHOTS.pdf  DOCUMENT.
 ****************************************************************************************************************************************
