@@ -36,9 +36,9 @@ public class Mywishlist extends Fragment {
         // list of item in wishlist
         List<WishlistModel> wishlistModelList = new ArrayList<>();
         wishlistModelList.add(new WishlistModel(R.drawable.maggie1, "Masala Maggie", "Rs350/-"));
-        wishlistModelList.add(new WishlistModel(R.drawable.lays, "Lays", "Rs 25/-"));
-        wishlistModelList.add(new WishlistModel(R.drawable.almonds, "Almonds", "Rs 800/-"));
-        wishlistModelList.add(new WishlistModel(R.drawable.detol, "Sanitizer", "Rs 150/-"));
+        wishlistModelList.add(new WishlistModel(R.drawable.lays, "Lays", "Rs25/-"));
+        wishlistModelList.add(new WishlistModel(R.drawable.almonds, "Almonds", "Rs750/-"));
+        wishlistModelList.add(new WishlistModel(R.drawable.detol, "Sanitizer", "Rs150/-"));
         //set adapter for wishlist
         WishlistAdapter wishlistAdapter = new WishlistAdapter(wishlistModelList);
         xwishlistrecyclerview.setAdapter(wishlistAdapter);
