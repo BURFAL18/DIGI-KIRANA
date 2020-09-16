@@ -1,5 +1,5 @@
-#DIGIKIRANA
-
+# DIGIKIRANA
+## https://sites.google.com/view/digikirana/
 *OVERVIEW:
 the application was built using Android Studio. This application helps both the customer and shop keeper and has high responsiveness and user friendly UI.
 
